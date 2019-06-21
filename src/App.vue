@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <HelloWorld />
+    <section>
+      <AddOne />
+    </section>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import AddOne from  "./components/AddOne";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    AddOne
   }
 };
 </script>
@@ -24,4 +26,16 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+  hr{
+    width: 50%;
+  }
+
+  section{
+    width: 50%;
+    height: 15vh;
+    text-align: center;
+    margin: 1vh auto;
+    border: 1px solid black;
+
+  }
 </style>
