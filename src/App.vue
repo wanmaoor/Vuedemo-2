@@ -3,16 +3,21 @@
     <section>
       <AddOne />
     </section>
+    <section>
+      <Directive />
+    </section>
   </div>
 </template>
 
 <script>
 import AddOne from  "./components/AddOne";
+import Directive from "./components/Vue.directive"
 
 export default {
   name: "App",
   components: {
-    AddOne
+    AddOne,
+    Directive
   }
 };
 </script>
