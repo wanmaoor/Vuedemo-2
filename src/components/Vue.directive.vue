@@ -22,8 +22,20 @@
 		},
 		//自定义指令
 		directives: {
-			color(el, binding){
-				el.style = `color: ${binding.value}`
+			color: {
+				bind(){
+					console.log('1 - bind')
+        },
+        inserted(el, binding){
+	        console.log('2 - inserted')
+					el.style = `color: ${binding.value}`
+        },
+        update(){
+					console.log('3 - update')
+        },
+        componentUpdated(){
+					console.log('4 - comopnentUpdated')
+        }
       }
 		}
 	}
