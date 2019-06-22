@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/Increment" class="nav">常規方法自加</router-link>
-      <router-link to="/Directive" class="nav">自定義指令</router-link>
-      <router-link to="/Router" class="nav">vue-router入門</router-link>
+      <router-link to="/increment" class="nav">常規方法自加</router-link>
+      <router-link to="/directive" class="nav">自定義指令</router-link>
+      <router-link to="/router" class="nav">vue-router入門</router-link>
+      <router-link to="/user" class="nav">動態路由匹配</router-link>
     </nav>
     <router-view class="view"></router-view>
   </div>
@@ -15,6 +16,7 @@ import Vue from "vue";
 import AddOne from "./components/AddOne";
 import Directive from "./components/Vue.directive";
 import VueRouter from "./components/VueRouter";
+import DynamicRoute from "./components/DynamicRouteMatching";
 
 Vue.use(vuerouter);
 
@@ -22,7 +24,8 @@ const router = new vuerouter({
   routes: [
     { path: "/increment", component: AddOne },
     { path: "/directive", component: Directive },
-    { path: "/router", component: VueRouter }
+    { path: "/router", component: VueRouter },
+    { path: "/user/:id", component: DynamicRoute },
   ]
 });
 
@@ -31,7 +34,8 @@ export default {
   components: {
     AddOne,
     Directive,
-    VueRouter
+    VueRouter,
+    DynamicRoute
   },
   router
 };

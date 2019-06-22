@@ -26,9 +26,7 @@
 	})
 	export default {
 		name: "VueRouter",
-		router,
-    Home,
-    About
+		router
 	}
 </script>
 
