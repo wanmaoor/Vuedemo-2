@@ -1,21 +1,30 @@
 <template>
   <div id="app">
-    <section>
-      <AddOne />
-    </section>
-    <section>
-      <Directive />
-    </section>
-    <section>
-      <VueRouter />
-    </section>
+    <nav>
+      <router-link to="/Increment" class="nav">常規方法自加</router-link>
+      <router-link to="/Directive" class="nav">自定義指令</router-link>
+      <router-link to="/Router" class="nav">vue-router入門</router-link>
+    </nav>
+    <router-view class="view"></router-view>
   </div>
 </template>
 
 <script>
-import AddOne from  "./components/AddOne";
-import Directive from "./components/Vue.directive"
-import VueRouter from "./components/VueRouter"
+import vuerouter from "vue-router";
+import Vue from "vue";
+import AddOne from "./components/AddOne";
+import Directive from "./components/Vue.directive";
+import VueRouter from "./components/VueRouter";
+
+Vue.use(vuerouter);
+
+const router = new vuerouter({
+  routes: [
+    { path: "/increment", component: AddOne },
+    { path: "/directive", component: Directive },
+    { path: "/router", component: VueRouter }
+  ]
+});
 
 export default {
   name: "App",
@@ -23,7 +32,8 @@ export default {
     AddOne,
     Directive,
     VueRouter
-  }
+  },
+  router
 };
 </script>
 
@@ -36,16 +46,36 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-  hr{
-    width: 50%;
-  }
+hr {
+  width: 50%;
+}
 
-  section{
-    width: 50%;
-    height: 15vh;
-    text-align: center;
-    margin: 1vh auto;
-    border: 1px solid black;
+section {
+  width: 50%;
+  height: 20vh;
+  text-align: center;
+  margin: 1vh auto;
+  border: 1px solid black;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
-  }
+}
+.nav{
+  text-decoration: none;
+  color: black;
+  margin: 5px auto;
+}
+.nav:active{
+  color: #333;
+}
+.nav:visited{
+  color: yellowgreen;
+}
+.view{
+  padding: 20vh;
+}
+
 </style>
