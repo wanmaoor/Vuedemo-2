@@ -6,18 +6,23 @@
     <section>
       <Directive />
     </section>
+    <section>
+      <VueRouter />
+    </section>
   </div>
 </template>
 
 <script>
 import AddOne from  "./components/AddOne";
 import Directive from "./components/Vue.directive"
+import VueRouter from "./components/VueRouter"
 
 export default {
   name: "App",
   components: {
     AddOne,
-    Directive
+    Directive,
+    VueRouter
   }
 };
 </script>
