@@ -3,8 +3,12 @@
 </template>
 
 <script>
-
 export default {
-  name: "DynamicRouteMatching"
+  name: "DynamicRouteMatching",
+  watch: {
+    $route(to, from) {
+      console.log(`路由已经改变`);
+    }
+  }
 };
 </script>
