@@ -17,6 +17,7 @@ import AddOne from "./components/AddOne";
 import Directive from "./components/Vue.directive";
 import VueRouter from "./components/VueRouter";
 import DynamicRoute from "./components/DynamicRouteMatching";
+import Err from "./components/Error";
 
 Vue.use(vuerouter);
 
@@ -26,6 +27,7 @@ const router = new vuerouter({
     { path: "/directive", component: Directive },
     { path: "/router", component: VueRouter },
     { path: "/user/:id", component: DynamicRoute },
+    { path: "*", component: Err }
   ]
 });
 
@@ -61,25 +63,23 @@ section {
   margin: 1vh auto;
   border: 1px solid black;
 }
-nav{
+nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
 }
-.nav{
+.nav {
   text-decoration: none;
   color: black;
   margin: 5px auto;
 }
-.nav:active{
+.nav:active {
   color: #333;
 }
-.nav:visited{
+.nav:visited {
   color: yellowgreen;
 }
-.view{
+.view {
   padding: 20vh;
 }
-
 </style>
